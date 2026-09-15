@@ -2,8 +2,7 @@ cask "edge-notes" do
   version "0.0.4"
   sha256 "cb6714cd25a4e46786e2672a1ca28a78a33f0e2277bff218f36ec2313d967159"
 
-  url "https://prasenjithiwale.github.io/edge-notes-apt/macos/Edge-Notes_#{version}_macOS_universal.dmg",
-      verified: "prasenjithiwale.github.io/edge-notes-apt/"
+  url "https://prasenjithiwale.github.io/edge-notes-apt/macos/Edge-Notes_#{version}_macOS_universal.dmg"
   name "Edge Notes"
   desc "Notes widget docked to the edge of the screen"
   homepage "https://github.com/prasenjithiwale/edge-notes"
