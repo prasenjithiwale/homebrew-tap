@@ -4,9 +4,13 @@
 docked to the edge of your screen.
 
 ```bash
-brew tap prasenjithiwale/tap
-brew install --cask edge-notes
+brew trust --cask prasenjithiwale/tap/edge-notes
+brew install --cask prasenjithiwale/tap/edge-notes
 ```
+
+Homebrew will not load a cask from a tap outside its own repositories until you
+say you trust it, which is what the first line is; the second adds the tap and
+installs. Afterwards the short name works: `brew upgrade edge-notes`.
 
 The disk image is downloaded from
 <https://prasenjithiwale.github.io/edge-notes-apt/>, where the Linux and Windows
