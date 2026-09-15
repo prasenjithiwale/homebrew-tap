@@ -8,7 +8,9 @@ cask "edge-notes" do
   desc "Notes widget docked to the edge of the screen"
   homepage "https://github.com/prasenjithiwale/edge-notes"
 
-  depends_on macos: ">= :monterey"
+  # Bare symbol, not ">= :monterey": Homebrew 7 deprecated the string form, and
+  # this one already means "Monterey or newer" (its comparator defaults to >=).
+  depends_on macos: :monterey
 
   app "Edge Notes.app"
 
