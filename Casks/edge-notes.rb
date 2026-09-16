@@ -1,9 +1,12 @@
+# The token stays  although the app is Ledge now: it is what an
+# existing install is upgraded by, and changing it would strand everyone who has
+# already installed from this tap on 0.0.4.
 cask "edge-notes" do
-  version "0.0.4"
-  sha256 "cb6714cd25a4e46786e2672a1ca28a78a33f0e2277bff218f36ec2313d967159"
+  version "0.1.0"
+  sha256 "85c6a8af03d97a92351d3f900ec84c83e2ee0fabefd4f2ceabcdf088c2acbc61"
 
-  url "https://prasenjithiwale.github.io/edge-notes-apt/macos/Edge-Notes_#{version}_macOS_universal.dmg"
-  name "Edge Notes"
+  url "https://prasenjithiwale.github.io/edge-notes-apt/macos/Ledge_#{version}_macOS_universal.dmg"
+  name "Ledge"
   desc "Notes widget docked to the edge of the screen"
   homepage "https://github.com/prasenjithiwale/edge-notes"
 
@@ -11,22 +14,30 @@ cask "edge-notes" do
   # this one already means "Monterey or newer" (its comparator defaults to >=).
   depends_on macos: :monterey
 
-  app "Edge Notes.app"
+  app "Ledge.app"
 
   # The build is unsigned and unnotarised, so it cannot open while quarantined.
   # See tools/publish_cask.sh in the source repository for why this is here and
   # what would remove it.
   postflight_steps do
     run "/usr/bin/xattr",
-        args: ["-dr", "com.apple.quarantine", "{{appdir}}/Edge Notes.app"]
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/Ledge.app"]
   end
 
+  # Both identifiers: the app was dev.edgenotes.app up to 0.0.4, and an install
+  # upgraded from it copied its database across but left the old folder behind.
   zap trash: [
+    "~/Library/Application Support/dev.ledge.app",
     "~/Library/Application Support/dev.edgenotes.app",
+    "~/Library/Caches/dev.ledge.app",
     "~/Library/Caches/dev.edgenotes.app",
+    "~/Library/HTTPStorages/dev.ledge.app",
     "~/Library/HTTPStorages/dev.edgenotes.app",
+    "~/Library/Preferences/dev.ledge.app.plist",
     "~/Library/Preferences/dev.edgenotes.app.plist",
+    "~/Library/Saved Application State/dev.ledge.app.savedState",
     "~/Library/Saved Application State/dev.edgenotes.app.savedState",
+    "~/Library/WebKit/dev.ledge.app",
     "~/Library/WebKit/dev.edgenotes.app",
   ]
 end
