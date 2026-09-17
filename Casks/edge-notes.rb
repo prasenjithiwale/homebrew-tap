@@ -1,9 +1,12 @@
-# The token stays  although the app is Ledge now: it is what an
+# The token stays edge-notes although the app is Ledge now: it is what an
 # existing install is upgraded by, and changing it would strand everyone who has
 # already installed from this tap on 0.0.4.
+#
+# No backticks anywhere in this heredoc: it is unquoted, so the shell would run
+# what is between them while generating the cask.
 cask "edge-notes" do
-  version "0.1.0"
-  sha256 "85c6a8af03d97a92351d3f900ec84c83e2ee0fabefd4f2ceabcdf088c2acbc61"
+  version "0.2.0"
+  sha256 "59782be7682a36817b0b4826bfc1582866ac74442aa9110256f53cab944398f9"
 
   url "https://prasenjithiwale.github.io/edge-notes-apt/macos/Ledge_#{version}_macOS_universal.dmg"
   name "Ledge"
