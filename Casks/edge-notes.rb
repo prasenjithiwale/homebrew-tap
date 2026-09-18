@@ -5,13 +5,15 @@
 # No backticks anywhere in this heredoc: it is unquoted, so the shell would run
 # what is between them while generating the cask.
 cask "edge-notes" do
-  version "0.4.0"
-  sha256 "3fc902fb742f27dab9a191337ff1e7e68c4f6873a912076f8db1e3b37c132952"
+  version "0.4.1"
+  sha256 "c5746366bd9415aad46f1991d5a91b99f3a0894adf59585d686e8908cbc1ba07"
 
   url "https://prasenjithiwale.github.io/edge-notes-apt/macos/Ledge_#{version}_macOS_universal.dmg"
   name "Ledge"
   desc "Notes widget docked to the edge of the screen"
-  homepage "https://github.com/prasenjithiwale/edge-notes"
+  # The site, not the source repository: that one is private and a cask
+  # homepage is something people click.
+  homepage "https://prasenjithiwale.github.io/edge-notes-apt/"
 
   # Bare symbol, not ">= :monterey": Homebrew 7 deprecated the string form, and
   # this one already means "Monterey or newer" (its comparator defaults to >=).
