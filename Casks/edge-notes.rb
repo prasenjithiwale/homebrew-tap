@@ -5,8 +5,8 @@
 # No backticks anywhere in this heredoc: it is unquoted, so the shell would run
 # what is between them while generating the cask.
 cask "edge-notes" do
-  version "0.7.1"
-  sha256 "74f9957d0b3ac67f6b8ee41f596559c2c157332314ba8f356321831a7331af1d"
+  version "0.8.0"
+  sha256 "e45c57c26a9a989f16822dc5605e6934d0f12996c6eb6c8794628558671b2d96"
 
   url "https://prasenjithiwale.github.io/edge-notes-apt/macos/Ledge_#{version}_macOS_universal.dmg"
   name "Ledge"
