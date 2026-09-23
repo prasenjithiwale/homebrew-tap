@@ -5,8 +5,8 @@
 # No backticks anywhere in this heredoc: it is unquoted, so the shell would run
 # what is between them while generating the cask.
 cask "edge-notes" do
-  version "0.8.0"
-  sha256 "e45c57c26a9a989f16822dc5605e6934d0f12996c6eb6c8794628558671b2d96"
+  version "0.9.0"
+  sha256 "e4c18daf350e0801eeecc4f66e74401167a98ebe14c8e5f137add18ec0a27908"
 
   url "https://prasenjithiwale.github.io/edge-notes-apt/macos/Ledge_#{version}_macOS_universal.dmg"
   name "Ledge"
@@ -18,6 +18,10 @@ cask "edge-notes" do
   # Bare symbol, not ">= :monterey": Homebrew 7 deprecated the string form, and
   # this one already means "Monterey or newer" (its comparator defaults to >=).
   depends_on macos: :monterey
+
+  # The app updates itself (idea 6), so brew upgrade leaves an install alone
+  # unless asked with --greedy, rather than fighting the app over the version.
+  auto_updates true
 
   app "Ledge.app"
 
